@@ -14,7 +14,7 @@
 	type="text/css" />
 </head>
 <body style="background: #e1e9eb;">
-	<form action="<%=basePath %>list.action" id="mainForm" method="post">
+	<form action="<%=basePath %>List.action" id="mainForm" method="post">
 		<div class="right">
 			<div class="current">
 				当前位置：<a href="javascript:void(0)" style="color:#6E6E6E;">内容管理</a>
@@ -29,9 +29,9 @@
 					<tbody>
 						<tr>
 							<td width="90" align="right">指令名称：</td>
-							<td><input name="command" type="text" class="allInput" value="" /></td>
+							<td><input name="command" type="text" class="allInput" value="${command}" /></td>
 							<td width="90" align="right">描述：</td>
-							<td><input name="description" type="text" class="allInput" value="" /></td>
+							<td><input name="description" type="text" class="allInput" value="${description}" /></td>
 							<td width="85" align="right"><input type="submit"
 								class="tabSub" value="查 询" /></td>
 						</tr>
