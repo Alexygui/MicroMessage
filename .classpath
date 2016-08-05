@@ -20,5 +20,6 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/mysql_jdbc"/>
+	<classpathentry kind="lib" path="/Users/wangguigen/MySofts/apache-tomcat-8.0.36/webapps/HelloWorld/WEB-INF/lib/jstl-impl.jar"/>
 	<classpathentry kind="output" path="WebRoot/WEB-INF/classes"/>
 </classpath>
