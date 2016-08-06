@@ -3,7 +3,6 @@ package com.aaa.dao;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Logger;
 
 import org.apache.ibatis.session.SqlSession;
 
@@ -60,6 +59,26 @@ public class MessageDao {
 		}
 	}
 
+	/**
+	 * 删除多条记录
+	 */
+	public void deleteBatch(List<Integer> ids) {
+		DBAccess aDbAccess = new DBAccess();
+		SqlSession aSqlSession = null;
+		try {
+			aSqlSession = aDbAccess.getSqlSession();
+			//通过aSqlSession执行sql语句
+			aSqlSession.delete("Message.deleteBatch",ids);
+			aSqlSession.commit();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}finally {
+			if(aSqlSession != null) {
+				aSqlSession.close();
+				aSqlSession = null;
+			}
+		}
+	}
 	/**
 	 * 根据查询条件查询消息列表
 	 */
