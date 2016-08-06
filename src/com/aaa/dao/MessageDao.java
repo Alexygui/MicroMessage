@@ -3,6 +3,7 @@ package com.aaa.dao;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Logger;
 
 import org.apache.ibatis.session.SqlSession;
 
@@ -84,5 +85,7 @@ public class MessageDao {
 		MessageDao aMessageDao = new MessageDao();
 		aMessageDao.queryMessageList("", "");
 		System.out.println("连接了");
+		Logger log;
+		
 	}
 }
