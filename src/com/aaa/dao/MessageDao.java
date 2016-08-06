@@ -22,8 +22,11 @@ public class MessageDao {
 		List<Message> messageList = new ArrayList<Message>();
 		try {
 			aSqlSession = aDbAccess.getSqlSession();
+			Message aMessage = new Message();
+			aMessage.setCommand(command);
+			aMessage.setDescription(description);
 			// 通过SqlSession执行SQL语句，通过Message.xml配置文件读取相应的sql语句操作数据库
-			messageList = aSqlSession.selectList("Message.queryMessageList");
+			messageList = aSqlSession.selectList("Message.queryMessageList", aMessage);
 		} catch (IOException e) {
 			e.printStackTrace();
 		} finally {

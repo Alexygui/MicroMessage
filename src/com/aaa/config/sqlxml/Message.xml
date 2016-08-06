@@ -25,8 +25,17 @@
 	<!--select是sql中的select语句，id是select语句的名字，用来查找该语句 -->
 	<!-- select标签中的resultMap标签指向mapper中的resultMap.id的标签，并且将数据库中的column中的值
 		放到javaBean中的property字段中 -->
-	<select id="queryMessageList"  resultMap="MessageResult">
+		<!-- parameterType中只能传递一个参数，所以将Message的对象传递进去从而搜索command和description两个词语 -->
+	<select id="queryMessageList" parameterType="com.aaa.bean.Message" resultMap="MessageResult">
 		select ID,COMMAND,DESCRIPTION,CONTENT from message where 1=1 
+		<!-- &quot;代表“引号，and 也可以用&amp;&amp;这样的html语言转义字符代替，
+			#{}用于取值，mybatis将其替换为?去写sql语句，再用statement.getString()将其替换为具体的值 -->
+		<if test="command != null and !&quot;&quot;.equals(command.trim())">
+		 and COMMAND=#{command} 
+		 </if>
+		<if test="description != null and !&quot;&quot;.equals(description.trim())"> 
+		and DESCRIPTION like '%' #{description} '%'
+		</if>
 	</select>
 
 	<!-- <select id="version" parameterType="long" resultType="int">
