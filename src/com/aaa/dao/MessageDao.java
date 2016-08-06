@@ -38,6 +38,27 @@ public class MessageDao {
 		}
 		return messageList;
 	}
+	
+	/**
+	 * 删除单条记录
+	 */
+	public void deleteOne(int id) {
+		DBAccess aDbAccess = new DBAccess();
+		SqlSession aSqlSession = null;
+		try {
+			aSqlSession = aDbAccess.getSqlSession();
+			//通过aSqlSession执行sql语句
+			aSqlSession.delete("Message.deleteOne",id);
+			aSqlSession.commit();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}finally {
+			if(aSqlSession != null) {
+				aSqlSession.close();
+				aSqlSession = null;
+			}
+		}
+	}
 
 	/**
 	 * 根据查询条件查询消息列表
@@ -85,7 +106,6 @@ public class MessageDao {
 		MessageDao aMessageDao = new MessageDao();
 		aMessageDao.queryMessageList("", "");
 		System.out.println("连接了");
-		Logger log;
 		
 	}
 }
