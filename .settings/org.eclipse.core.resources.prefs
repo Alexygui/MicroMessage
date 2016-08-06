@@ -1,2 +1,10 @@
 eclipse.preferences.version=1
 encoding//WebRoot/WEB-INF/jsp/back/list.jsp=UTF-8
+encoding//WebRoot/WEB-INF/jsp/front/talk.jsp=UTF-8
+encoding//WebRoot/resources/css/jscrollpane1.css=UTF-8
+encoding//WebRoot/resources/js/common/jquery.jscrollpane.min.js=UTF-8
+encoding//WebRoot/resources/js/common/jquery.mousewheel.js=UTF-8
+encoding//WebRoot/resources/js/common/scroll-startstop.events.jquery.js=UTF-8
+encoding//WebRoot/resources/js/front/talk.js=UTF-8
+encoding//src/com/aaa/servlet/AutoReplyServlet.java=UTF-8
+encoding//src/com/aaa/servlet/InitTalkServlet.java=UTF-8

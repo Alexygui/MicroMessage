@@ -13,8 +13,8 @@
 <link href="<%=basePath%>resources/css/all.css" rel="stylesheet"
 	type="text/css" />
 <!-- 引入jquery和js -->	
-<script src="<%=basePath%>resources/js/jquery-1.8.0.min.js"></script>
-<script src="<%=basePath%>resources/js/list.js"></script>
+<script src="<%=basePath%>resources/js/common/jquery-1.8.0.min.js"></script>
+<script src="<%=basePath%>resources/js/back/list.js"></script>
 </head>
 <body style="background: #e1e9eb;">
 	<form action="<%=basePath %>List.action" id="mainForm" method="post">

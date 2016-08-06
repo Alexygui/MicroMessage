@@ -18,26 +18,19 @@ import com.aaa.bean.Message;
 import com.aaa.service.QueryService;
 
 /**
- * 列表的初始化控制
+ * 对话页面的初始化控制
  */
 @SuppressWarnings("serial")
-public class ListServlet extends HttpServlet {
+public class InitTalkServlet extends HttpServlet {
 
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		//设置页面编码防止乱码
-		request.setCharacterEncoding("utf-8");
-		String command = request.getParameter("command");
-		String description = request.getParameter("description");
-		//向页面传值
-		request.setAttribute("command", command);
-		request.setAttribute("description", description);	
-		QueryService listService = new QueryService();
-		//查询消息列表并传给页面
-		request.setAttribute("messageList", listService.queryMessageList(command, description));
+		request.setCharacterEncoding("UTF-8");
+		
 		//向页面跳转
-		request.getRequestDispatcher("/WEB-INF/jsp/back/list.jsp").forward(request, response);
+		request.getRequestDispatcher("/WEB-INF/jsp/front/talk.jsp").forward(request, response);
 		
 	}
 
