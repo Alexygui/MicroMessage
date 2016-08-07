@@ -46,6 +46,8 @@
 
   <mappers>
     <mapper resource="com/aaa/config/sqlxml/Message.xml"/>
+    <mapper resource="com/aaa/config/sqlxml/Command.xml"/>
+    <mapper resource="com/aaa/config/sqlxml/CommandContent.xml"/>
   </mappers> 
 
 </configuration>
