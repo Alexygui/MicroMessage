@@ -27,6 +27,7 @@ public class MessageDao {
 			aMessage.setDescription(description);
 			// 通过SqlSession执行SQL语句，通过Message.xml配置文件读取相应的sql语句操作数据库
 //			messageList = aSqlSession.selectList("Message.queryMessageList", aMessage);
+			//
 			IMessage aIMessage = aSqlSession.getMapper(IMessage.class);
 			messageList = aIMessage.queryMessageList(aMessage);
 		} catch (IOException e) {
